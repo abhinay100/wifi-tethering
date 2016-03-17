@@ -56,12 +56,7 @@ public class WifiAP extends Activity {
         new SetWifiAPTask(!wifiApIsOn,false,context).execute();
     }
 
-    /**
-     * Enable/disable wifi
-     * @param true or false
-     * @return WifiAP state
-     * @author http://stackoverflow.com/a/7049074/1233435
-     */
+
     private int setWifiApEnabled(boolean enabled) {
         Log.d(TAG, "*** setWifiApEnabled CALLED **** " + enabled);
 
@@ -146,11 +141,7 @@ public class WifiAP extends Activity {
         return state;
     }
 
-    /**
-     * Get the wifi AP state
-     * @return WifiAP state
-     * @author http://stackoverflow.com/a/7049074/1233435
-     */
+
     public int getWifiAPState() {
         int state = WIFI_AP_STATE_UNKNOWN;
         try {
@@ -176,22 +167,12 @@ public class WifiAP extends Activity {
         return state;
     }
 
-    /**
-     * the AsyncTask to enable/disable the wifi ap
-     * @author http://stackoverflow.com/a/7049074/1233435
-     */
+
     class SetWifiAPTask extends AsyncTask<Void, Void, Void> {
         boolean mMode; //enable or disable wifi AP
         boolean mFinish; //finalize or not (e.g. on exit)
         ProgressDialog d;
 
-        /**
-         * enable/disable the wifi ap
-         * @param mode enable or disable wifi AP
-         * @param finish finalize or not (e.g. on exit)
-         * @param context the context of the calling activity
-         * @author http://stackoverflow.com/a/7049074/1233435
-         */
         public SetWifiAPTask(boolean mode, boolean finish, Context context) {
             mMode = mode;
             mFinish = finish;
@@ -200,7 +181,7 @@ public class WifiAP extends Activity {
 
         /**
          * do before background task runs
-         * @author http://stackoverflow.com/a/7049074/1233435
+
          */
         @Override
         protected void onPreExecute() {
@@ -213,7 +194,6 @@ public class WifiAP extends Activity {
         /**
          * do after background task runs
          * @param aVoid
-         * @author http://stackoverflow.com/a/7049074/1233435
          */
         @Override
         protected void onPostExecute(Void aVoid) {
@@ -232,7 +212,7 @@ public class WifiAP extends Activity {
         /**
          * the background task to run
          * @param params
-         * @author http://stackoverflow.com/a/7049074/1233435
+
          */
         @Override
         protected Void doInBackground(Void... params) {
